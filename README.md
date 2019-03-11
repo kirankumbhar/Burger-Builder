@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#React project Burger Builder from Udemy course
+React project Burger Builder from Udemy course
 
 Demo App
