@@ -4,5 +4,6 @@ export {
     purchaseBurgerFail,
     purchaseBurger,
     purchaseBurgerStart,
-    purchaseInit
+    purchaseInit,
+    fetchOrders
 } from './order';
