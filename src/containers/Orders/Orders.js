@@ -7,7 +7,10 @@ import * as actions from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
 class Orders extends Component {
     componentDidMount() {
-        this.props.onfetchOrders();
+        console.log(this.props.token)
+        if (this.props.token) {
+            this.props.onfetchOrders(this.props.token.idToken);
+        }
     }
     render() {
         let orders = <Spinner />
@@ -24,7 +27,7 @@ class Orders extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onfetchOrders: () => dispatch(actions.fetchOrders())
+        onfetchOrders: (token) => dispatch(actions.fetchOrders(token))
     }
 }
 
@@ -33,7 +36,8 @@ const mapStateToProps = state => {
     
     return {
         orders: state.order.orders,
-        loading: state.order.loading
+        loading: state.order.loading,
+        token: state.auth.token
     }
 }
 
